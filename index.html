@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Elowen, GCute">
+    <link rel="icon" href="images/icons/star.ico">
+    <title>SoB Delivery</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      @import url('https://fonts.googleapis.com/css?family=Acme');
+      @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+      @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+      @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Sigmar+One');
+      body {
+        background: black;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        margin: 10px;
+      }
+
+      @media only screen and (min-width: 240px) {
+        .navbar-fixed-top {
+          position: relative;
+        }
+        div.header-fixed {
+          background-color: black;
+          font-family: 'Sigmar One', sans-serif;
+          font-size: 16px;
+          letter-spacing: 0.1em;
+          border-bottom: 5px dashed gray;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          text-align: center;
+        }
+        div.content {
+          font-family: 'Architects Daughter', sans-serif;
+          z-index: 1;
+        }
+        .ad {
+          width: 240px;
+          height: 150px;
+          border: none;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .ad-fixed {
+          position: fixed;
+        }
+        .navbar-fixed-top {
+          position: fixed;
+        }
+        div.header-fixed {
+          background-color: black;
+          font-family: 'Sigmar One', sans-serif;
+          font-size: 16px;
+          letter-spacing: 0.1em;
+          z-index: 999;
+          border-bottom: 5px dashed gray;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          text-align: center;
+        }
+        div.content {
+          font-family: 'Architects Daughter', sans-serif;
+          margin-top: 130px;
+          z-index: 1;
+        }
+        .ad {
+          width: 250px;
+          height: 200px;
+          border: none;
+        }
+      }
+
+      @media only screen and (min-width: 1280px) {
+        .ad {
+          width: 350px;
+          height: 250px;
+          border: none;
+        }
+      }
+
+      hr.dashed {
+        border: 1px solid gray;
+        margin-top: 0;
+      }
+      div.center {
+        text-align: center;
+      }
+      div.right{
+        text-align: right;
+      }
+      div.dark {
+        background-color: #222222;
+        border: 2px solid #222222;
+        border-radius: 3px;
+      }
+      .floated {
+        float: left;
+        background: #ffe0e0;
+        border-radius: 3px;
+        margin-right: 20px;
+      }
+      .modal-header {
+        color: black;
+      }
+      video::-webkit-media-controls-fullscreen-button { display: none; }
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script language="Javascript">
+      function showAs(display) {
+        document.getElementById('thumbs').hidden = true;
+        document.getElementById('detailed').hidden = true;
+        document.getElementById(display).hidden = false;
+      }
+      function init() {
+        document.getElementById('detailed').hidden = true;
+      }
+    </script>
+  </head>
+  <body onload='init();'>
+    <div class="container">
+      <div class="row navbar-fixed-top header-fixed">
+        <div class="col-md-4">
+          <br>
+          Now delivers to BF Homes!<br>
+          From 4PM to 12MN
+        </div>
+        <div class="col-md-4"><center><img src="images/logo/Logo.png" width="150" height="120" border="0"/></center></div>
+        <div class="col-md-4">
+          <br>
+          <span class="glyphicon glyphicon-phone"></span> 0917-8243696<br>
+          <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-map-marker"></span> View location map</a>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Location Map</h4>
+            </div>
+            <div class="modal-body">
+              <center><img src="images/resources/locmap.jpg" width="80%" height="80%" border="0"></center>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="row">
+          <div class="col-md-4 ad-fixed">
+            <video class="ad" controls muted autoplay loop controlsList="nodownload">
+              <source src="media/vid1wmusic.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <br><br>
+            <img src="images/resources/advert1.png" class="ad">
+          </div>
+          <div class="col-md-8 col-md-offset-4">
+            <div class="row">
+              <div class="col-md-12 right">
+                <a href="javascript:showAs('thumbs')"><span class="glyphicon glyphicon-th-large"></span> Thumbnail view</a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <a href="javascript:showAs('detailed')"><span class="glyphicon glyphicon-th-list"></span> Detailed view</a>
+                <hr class="dashed"/>
+              </div>
+            </div>
+            <div id="thumbs">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Maximus.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Maximus</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Dirty Harry.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Dirty Harry</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Jughead.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Jughead</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Cowabunga.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Cowabunga</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Bushido.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Bushido</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Hellboy.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Hellboy</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Luchador.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Luchador</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/The Bastard.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>The Bastard</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/noimage.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Skinny Fries</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/noimage.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4>Chili Cheese Fries</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-danger dark center">
+                    <div class="panel-heading"><img src="images/food/Salpi-Cow!.png" width="120" height="120" border="0"></div>
+                    <div class="panel-body">
+                      <h4><br>Salpi-Cow!</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="detailed">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Maximus.png" width="120" height="120" border="0" class="floated">
+                      <h2>Maximus</h2>
+                      <h4>garlic-mayo, coriander, onions, &amp; tomato<br>
+                      Php 200</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Dirty Harry.png" width="120" height="120" border="0" class="floated">
+                      <h2>Dirty Harry</h2>
+                      <h4>bacon, mushroom, &amp; cheddar cheese<br>
+                      Php 230</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Jughead.png" width="120" height="120" border="0" class="floated">
+                      <h2>Jughead</h2>
+                      <h4>tomato, lettuce, &amp; cheddar cheese<br>
+                      Php 200</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Cowabunga.png" width="120" height="120" border="0" class="floated">
+                      <h2>Cowabunga</h2>
+                      <h4>pizza sauce, mozzarella, &amp; cheddar cheese<br>
+                      Php 250</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Bushido.png" width="120" height="120" border="0" class="floated">
+                      <h2>Bushido</h2>
+                      <h4>wasabi-mayo, onions, &amp; cucumber<br>
+                      Php 200</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Hellboy.png" width="120" height="120" border="0" class="floated">
+                      <h2>Hellboy</h2>
+                      <h4>chili &amp; cheddar cheese<br>
+                      Php 240</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Luchador.png" width="120" height="120" border="0" class="floated">
+                      <h2>Luchador</h2>
+                      <h4>salsa, bacon, &amp; cheddar cheese<br>
+                      Php 220</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/The Bastard.png" width="120" height="120" border="0" class="floated">
+                      <h2>The Bastard</h2>
+                      <h4>sausage platter w/ garlic &amp; parsley<br>
+                      Php 300</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/noimage.png" width="120" height="120" border="0" class="floated">
+                      <h2>Skinny Fries</h2>
+                      <h4>special house fries<br>
+                      Php 200</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/noimage.png" width="120" height="120" border="0" class="floated">
+                      <h2>Chili Cheese Fries</h2>
+                      <h4>staple fries w/ homemade chili, smothered in cheese<br>
+                      Php 250</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="panel panel-danger dark">
+                    <div class="panel-body">
+                      <img src="images/food/Salpi-Cow!.png" width="120" height="120" border="0" class="floated">
+                      <h2>Salpi-Cow!</h2>
+                      <h4>hanger beef strips w/ special marinade, finished w/ garlic &amp; parsley<br>
+                      Php 300</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 right">
+                <hr class="dashed"/>
+                <a href="javascript:showAs('thumbs')"><span class="glyphicon glyphicon-th-large"></span> Thumbnail view</a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <a href="javascript:showAs('detailed')"><span class="glyphicon glyphicon-th-list"></span> Detailed view</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
